@@ -1,128 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <style>
-      #root {
-        width: 100vw;
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-      #line {
-        margin-top: 10px;
-        margin-left: 126px;
-        border-left: 1px solid #000; /* 세로 줄의 스타일 및 두께를 여기에 지정하세요 */
-        height: 83vh;
-      }
-      #first-container {
-        margin-top: 60px;
-        text-align: left;
-      }
-      li {
-        list-style: none;
-        margin-bottom: 32px;
-        font-size: 12px;
-      }
-      #second-container {
-        margin-left: 17px;
-      }
-      #second-container > p:nth-child(2) {
-        font-size: 12px;
-        width: 500px;
-        height: 240px;
-        margin-bottom: 60px;
-      }
-      #second-container > div {
-        display: flex;
-      }
-      #second-container > p:nth-child(4) {
-        font-size: 12px;
-        width: 500px;
-        height: 122px;
-      }
-      #third-container {
-        margin-top: 119px;
-        flex-direction: column;
-        width: 500px;
-      }
-      button {
-        height: 64px;
-        margin-top: 27px;
-      }
-      input {
-        height: 32px;
-      }
-      #first-title {
-        font-size: 32px;
-        font-weight: 400;
-        margin-bottom: 24px;
-      }
-      #second-title {
-        font-size: 32px;
-        font-weight: 400;
-        margin-bottom: 24px;
-      }
-    </style>
-  </head>
-  <body>
-    <div id="root">
-      <!-- first container -->
-      <ul id="first-container">
-        <li>김우진</li>
-        <li>김현</li>
-        <li>방승희</li>
-        <li>변호녕</li>
-        <li>소사무엘</li>
-        <li>송영준</li>
-        <li>신동현</li>
-        <li>오승민</li>
-        <li>유승민</li>
-        <li>윤준현</li>
-        <li>이민구</li>
-        <li>이유안</li>
-        <li>이채이</li>
-        <li>정영식</li>
-        <li>최성민</li>
-        <li>최은철</li>
-        <li>홍문기</li>
-      </ul>
-      <!-- line -->
-      <div id="line"></div>
-      <div id="second-container">
-        <div id="first-title">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <style>
+    #root {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #line {
+      margin-top: 10px;
+      margin-left: 126px;
+      border-left: 1px solid #000;
+      /* 세로 줄의 스타일 및 두께를 여기에 지정하세요 */
+      height: 83vh;
+    }
+
+    #first-container {
+      margin-top: 60px;
+      text-align: left;
+    }
+
+    li {
+      list-style: none;
+      margin-bottom: 32px;
+      font-size: 12px;
+    }
+
+    #second-container {
+      margin-left: 17px;
+    }
+
+    #second-container>p:nth-child(2) {
+      font-size: 12px;
+      width: 500px;
+      height: 240px;
+      margin-bottom: 60px;
+    }
+
+    #second-container>div {
+      display: flex;
+    }
+
+    #second-container>p:nth-child(4) {
+      font-size: 12px;
+      width: 500px;
+      height: 122px;
+    }
+
+    #third-container {
+      margin-top: 119px;
+      flex-direction: column;
+      width: 500px;
+    }
+
+    button {
+      height: 64px;
+      margin-top: 27px;
+    }
+
+    input {
+      height: 32px;
+    }
+
+    #first-title {
+      font-size: 32px;
+      font-weight: 400;
+      margin-bottom: 24px;
+    }
+
+    #second-title {
+      font-size: 32px;
+      font-weight: 400;
+      margin-bottom: 24px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="root">
+    <!-- first container -->
+    <ul id="first-container">
+      <li>김우진</li>
+      <li>김현</li>
+      <li>방승희</li>
+      <li>변호녕</li>
+      <li>소사무엘</li>
+      <li>송영준</li>
+      <li>신동현</li>
+      <li>오승민</li>
+      <li>유승민</li>
+      <li>윤준현</li>
+      <li>이민구</li>
+      <li>이유안</li>
+      <li>이채이</li>
+      <li>정영식</li>
+      <li>최성민</li>
+      <li>최은철</li>
+      <li>홍문기</li>
+    </ul>
+    <!-- line -->
+    <div id="line"></div>
+    <div id="second-container">
+      <div id="first-title">
         <div id="first-output"></div>
-        </div>
-        <p>Lorem ipsum dolor sit amet consectetur. Mfuris vitae nullam suspendisse ut amet quis nibh pellentesque. Non ut neque pellentesque FFfnisl imperdiet turpis nulla ut. Ut id massa eu eu rhoncus elementum adipiscing metus. Mi risus nulla phasellus nisl molestie dignissim risus arcu elementum. Habitasse tortor tempus sed enim lectus duis volutpat. Pellentesque lacinia suspendisse sit malesuada sit a faucibus sed mattis. Egestas mauris id mattis id pulvinar nunc euismod id diam. Amet amet aliquet pharetra sed nam ipsum aenean dis tempor. Nisl in egestas cursus sagittis sed in integer. Sed sed cursus tempor porttitor. Cras viverra arcu sed laoreet volutpat enim sem sapien. Est nibh velit eu ipsum praesent vitae vestibulum aliquam.
-          Sagittis nisi faucibus libero luctus tincidunt. Porttitor laoreet tellus maecenas tempor. Vehicula ut vulputate lorem congue. Eget dignissim aliquam integer tincidunt massa nulla duis mauris. Pellentesque aenean sit mauris morbi.
-          Dolor non aliquam elit risus elementum dictumst. Eu egestas turpis diam dictum. Dictumst leo senectus velit porta. Pretium tortor velit nulla sit ipsum vel sagittis. Eget elit donec sed amet vel in mattis aenean nibh. Fermentum et ac purus diam sit erat in vitae tellus. In at sit ornare fermentum. Risus blandit amet eget id.</p>
-          <div id="second-title">
-            <div id=second-output></div>
-          </div>
-          <p>
-            Lorem ipsum dolor sit amet consectetur. Consectetur morbi fames in id sit turpis eget lectus ut. Neque orci hendrerit scelerisque nam ac ac eu dui urna. Aliquet vulputate tortor odio ut. Turpis nam sagittis non iaculis. Eu purus mollis cursus sagittis sit. Tempor tempor tincidunt ac in. Ullamcorper eros ullamcorper tincidunt sagittis. Libero massa nec gravida libero. Volutpat orci bibendum morbi porta mauris pellentesque. Natoque gravida at penatibus vestibulum purus tristique mollis imperdiet amet. Sed magna dignissim luctus cras nulla. Ultrices sapien sed quis consectetur turpis fusce sem facilisis eget.
-          </p>
-          <div id="third-container">
-            <input type="text" placeholder="Write your name.">
-            <button>show</button>
-          </div>
       </div>
-      <script>
-        const UL = document.getElementById('first-container');
-        const ListItem = UL.getElementsByTagName('LI');
-        const firstTitle = document.getElementById('first-title');
-        const secondTitle = document.getElementById('second-title');
-        Array.from(ListItem).forEach(item => {
-          item.addEventListener('click', () => {
-            // 문제점 발견 div와 그 자식인 텍스트가 사라지는 현상 발견
-            const selectWord = item.textContent;
-            firstTitle.textContent = selectWord+" 소개";
-            secondTitle.textContent = selectWord+" 장점";
-          })
+      <p>Lorem ipsum dolor sit amet consectetur. Mfuris vitae nullam suspendisse ut amet quis nibh pellentesque. Non ut
+        neque pellentesque FFfnisl imperdiet turpis nulla ut. Ut id massa eu eu rhoncus elementum adipiscing metus. Mi
+        risus nulla phasellus nisl molestie dignissim risus arcu elementum. Habitasse tortor tempus sed enim lectus duis
+        volutpat. Pellentesque lacinia suspendisse sit malesuada sit a faucibus sed mattis. Egestas mauris id mattis id
+        pulvinar nunc euismod id diam. Amet amet aliquet pharetra sed nam ipsum aenean dis tempor. Nisl in egestas
+        cursus sagittis sed in integer. Sed sed cursus tempor porttitor. Cras viverra arcu sed laoreet volutpat enim sem
+        sapien. Est nibh velit eu ipsum praesent vitae vestibulum aliquam.
+        Sagittis nisi faucibus libero luctus tincidunt. Porttitor laoreet tellus maecenas tempor. Vehicula ut vulputate
+        lorem congue. Eget dignissim aliquam integer tincidunt massa nulla duis mauris. Pellentesque aenean sit mauris
+        morbi.
+        Dolor non aliquam elit risus elementum dictumst. Eu egestas turpis diam dictum. Dictumst leo senectus velit
+        porta. Pretium tortor velit nulla sit ipsum vel sagittis. Eget elit donec sed amet vel in mattis aenean nibh.
+        Fermentum et ac purus diam sit erat in vitae tellus. In at sit ornare fermentum. Risus blandit amet eget id.</p>
+      <div id="second-title">
+        <div id=second-output></div>
+      </div>
+      <p>
+        Lorem ipsum dolor sit amet consectetur. Consectetur morbi fames in id sit turpis eget lectus ut. Neque orci
+        hendrerit scelerisque nam ac ac eu dui urna. Aliquet vulputate tortor odio ut. Turpis nam sagittis non iaculis.
+        Eu purus mollis cursus sagittis sit. Tempor tempor tincidunt ac in. Ullamcorper eros ullamcorper tincidunt
+        sagittis. Libero massa nec gravida libero. Volutpat orci bibendum morbi porta mauris pellentesque. Natoque
+        gravida at penatibus vestibulum purus tristique mollis imperdiet amet. Sed magna dignissim luctus cras nulla.
+        Ultrices sapien sed quis consectetur turpis fusce sem facilisis eget.
+      </p>
+      <div id="third-container">
+        <input type="text" placeholder="Write your name.">
+        <button>show</button>
+      </div>
+    </div>
+    <script>
+      const UL = document.getElementById('first-container');
+      const ListItem = UL.getElementsByTagName('LI');
+      const firstTitle = document.getElementById('first-title');
+      const secondTitle = document.getElementById('second-title');
+      let selectedItem = null;
+
+      Array.from(ListItem).forEach(item => {
+        item.addEventListener('click', () => {
+          // 문제점 발견 div와 그 자식인 텍스트가 사라지는 현상 발견
+          const selectWord = item.textContent;
+          firstTitle.textContent = selectWord + " 소개";
+          secondTitle.textContent = selectWord + " 장점";
+          item.style.transform = 'translateX(100%)';
+
+          // 현재 클릭한 li 요소를 이전에 선택된 요소로 설정
+          selectedListItem = item;
         })
-      </script>
-  </body>
+      })
+    </script>
+</body>
+
 </html>
