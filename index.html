@@ -6,7 +6,12 @@
     <title>Document</title>
     <style>
       li {
-        text-align: center;
+        list-style-type: none;
+      }
+      li:before {
+        content: "•"; /* 원하는 기호(여기서는 점) 사용 */
+        font-size: 20px;
+        margin-right: 50px; /* 점과 텍스트 사이의 추가 간격 조정 */
       }
     </style>
   </head>
