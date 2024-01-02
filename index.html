@@ -136,8 +136,8 @@
         Ultrices sapien sed quis consectetur turpis fusce sem facilisis eget.
       </p>
       <div id="third-container">
-        <input type="text" placeholder="Write your name.">
-        <button>show</button>
+        <input type="text" id="student-name" placeholder="Write your name.">
+        <button id="Button">show</button>
       </div>
     </div>
     <script>
@@ -145,7 +145,12 @@
       const ListItem = UL.getElementsByTagName('LI');
       const firstTitle = document.getElementById('first-title');
       const secondTitle = document.getElementById('second-title');
+      const button = document.getElementById('Button');
       let selectedItem = null;
+      const studentName = document.getElementById('student-name')
+      const valueText = studentName.textContent
+      console.dir(studentName)
+      console.log(valueText)
 
       Array.from(ListItem).forEach(item => {
         item.addEventListener('click', () => {
@@ -158,6 +163,25 @@
           // 현재 클릭한 li 요소를 이전에 선택된 요소로 설정
           selectedListItem = item;
         })
+      })
+      button.addEventListener('click', function () {
+        const ListName = Array.from(ListItem)
+
+        const matchName = ListName.find(Item => {
+          return Item.innerText.toLowerCase() === studentName;
+        });
+
+        if (matchName) {
+          if (firstTitle.innerHTML === '') {
+            firstTitle.innerHTML = matchName.innerText + ' 소개';
+          } else if (secondTitle.innerHTML === '') {
+            secondTitle.innerHTML = matchName.innerText + ' 장점';
+          }
+        } else {
+          UL.style.display = 'none';
+          firstTitle.display = 'none';
+          secondTitle.display = 'none';
+        }
       })
     </script>
 </body>
