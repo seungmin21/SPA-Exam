@@ -13,7 +13,7 @@ npx create-react-app my-react-app
 8. 최종 결과물은 App.jsx에 두는 것으로 결정
 
 컴포넌트화 하려고 진행했던 시도는 실패했으며
-시도에 대한 자료는 ContainerBox에 남아있습니다.
+시도에 대한 자료는 ContainerBox폴더와 App.js에 남아있습니다.
 
 컴포넌트를 진행하려고 했던 점은 first-container, second-container, third-container로 나누려고 했었습니다.
 하지만 Event.click의 기능으로 묶여있어서 App.jsx에 전부 작성하는 방안으로 진행을 했습니다.
