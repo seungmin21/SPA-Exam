@@ -148,10 +148,7 @@
       const button = document.getElementById('Button');
       let selectedItem = null;
       const studentName = document.getElementById('student-name')
-      const valueText = studentName.textContent
-      console.dir(studentName)
-      console.log(valueText)
-
+      
       Array.from(ListItem).forEach(item => {
         item.addEventListener('click', () => {
           // 문제점 발견 div와 그 자식인 텍스트가 사라지는 현상 발견
@@ -159,22 +156,22 @@
           firstTitle.textContent = selectWord + " 소개";
           secondTitle.textContent = selectWord + " 장점";
           item.style.transform = 'translateX(100%)';
-
+          
           // 현재 클릭한 li 요소를 이전에 선택된 요소로 설정
           selectedListItem = item;
         })
       })
       button.addEventListener('click', function () {
+        const valueText = studentName.value;
         const ListName = Array.from(ListItem)
 
         const matchName = ListName.find(Item => {
-          return Item.innerText.toLowerCase() === studentName;
+          return Item.innerText === valueText;
         });
 
         if (matchName) {
-          if (firstTitle.innerHTML === '') {
+          if (firstTitle.innerHTML === '' && secondTitle.innerHTML === '') {
             firstTitle.innerHTML = matchName.innerText + ' 소개';
-          } else if (secondTitle.innerHTML === '') {
             secondTitle.innerHTML = matchName.innerText + ' 장점';
           }
         } else {
