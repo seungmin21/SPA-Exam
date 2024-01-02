@@ -2,8 +2,11 @@ import React, { useState } from "react";
 import "./ContainerBox/styles.css";
 
 const App = () => {
-  const [selectedItem, setSelectedItem] = useState(null);
-  const [inputValue, setInputValue] = useState('');
+  // useState가 배열을 반환하는 점
+  // 객체가 아닌 배열로 감싸 값을 추출 = 배열 비구조화
+  const [selectedItem, setSelectedItem] = useState("");
+  const [inputValue, setInputValue] = useState("");
+  const [hiddenItems, setHiddenItems] = useState([]);
   const studentList = [
     "김우진",
     "김현",
@@ -25,6 +28,7 @@ const App = () => {
   ];
 
   const handleListItemClick = (name) => {
+    // 상태를 변경할 때 set 함수를 사용
     setSelectedItem(name);
   };
 
@@ -32,9 +36,13 @@ const App = () => {
     const matchName = studentList.find((name) => name === inputValue);
 
     if (matchName) {
+      // 숨긴다는 단어의 상태 값 초기화
+      setHiddenItems([]);
+      // 선택한 아이템의 상태 값을 보여주는 데이터
       setSelectedItem(matchName);
     } else {
-      setSelectedItem(null);
+      setSelectedItem("");
+      setHiddenItems(studentList);
     }
   };
 
@@ -43,18 +51,25 @@ const App = () => {
       {/* First Container */}
       <ul id="first-container">
         {studentList.map((name, index) => (
-          <li key={index} onClick={() => handleListItemClick(name)}>
+          <li
+            key={index}
+            onClick={() => handleListItemClick(name)}
+            style={{ display: hiddenItems.includes(name) ? "none" : "block" }}
+          >
             {name}
           </li>
         ))}
       </ul>
 
-      {/* Line */}
       <div id="line"></div>
 
       {/* Second Container */}
       <div id="second-container">
-        <div id="first-title">
+        {/* 직접적인 상태 데이터가 사용될 때 */}
+        <div
+          id="first-title"
+          style={{ display: selectedItem ? "block" : "none" }}
+        >
           {selectedItem && <div>{selectedItem} 소개</div>}
         </div>
         <p>
@@ -78,7 +93,10 @@ const App = () => {
           vel in mattis aenean nibh. Fermentum et ac purus diam sit erat in
           vitae tellus. In at sit ornare fermentum. Risus blandit amet eget id.
         </p>
-        <div id="second-title">
+        <div
+          id="second-title"
+          style={{ display: selectedItem ? "block" : "none" }}
+        >
           {selectedItem && <div>{selectedItem} 장점</div>}
         </div>
         <p>
