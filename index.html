@@ -82,7 +82,6 @@
     }
   </style>
 </head>
-
 <body>
   <div id="root">
     <!-- first container -->
@@ -136,8 +135,8 @@
         Ultrices sapien sed quis consectetur turpis fusce sem facilisis eget.
       </p>
       <div id="third-container">
-        <input type="text" placeholder="Write your name.">
-        <button>show</button>
+        <input type="text" id="student-name" placeholder="Write your name.">
+        <button id="Button">show</button>
       </div>
     </div>
     <script>
@@ -145,21 +144,45 @@
       const ListItem = UL.getElementsByTagName('LI');
       const firstTitle = document.getElementById('first-title');
       const secondTitle = document.getElementById('second-title');
+      const button = document.getElementById('Button');
+      const studentName = document.getElementById('student-name')
       let selectedItem = null;
 
       Array.from(ListItem).forEach(item => {
         item.addEventListener('click', () => {
-          // 문제점 발견 div와 그 자식인 텍스트가 사라지는 현상 발견
           const selectWord = item.textContent;
           firstTitle.textContent = selectWord + " 소개";
           secondTitle.textContent = selectWord + " 장점";
           item.style.transform = 'translateX(100%)';
 
-          // 현재 클릭한 li 요소를 이전에 선택된 요소로 설정
           selectedListItem = item;
         })
       })
+
+      button.addEventListener('click', function () {
+        const valueText = studentName.value;
+        // Array.from은 새로운 배열을 만들어 주는 메서드
+        const ListName = Array.from(ListItem);
+
+        // 배열에서 제공된 조건을 통과할 경우 일치하는 value를 반환
+        const matchName = ListName.find(Item => {
+          return Item.innerText === valueText;
+        });
+
+        if (matchName) {
+          firstTitle.innerHTML = matchName.innerText + ' 소개';
+          secondTitle.innerHTML = matchName.innerText + ' 장점';
+          // 일치할 경우 display block 처리로 활성화
+          UL.style.display = 'block';
+          firstTitle.style.display = 'block';
+          secondTitle.style.display = 'block';
+        } else {
+          // 일치하지 않을 경우 display none 처리
+          UL.style.display = 'none';
+          firstTitle.style.display = 'none';
+          secondTitle.style.display = 'none';
+        }
+      });
     </script>
 </body>
-
 </html>
